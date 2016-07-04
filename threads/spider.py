@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#! -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 import requests
 import random
@@ -27,7 +27,7 @@ from useragent import *
  pn: "1"
  kd: "python"
 '''
-#threading.Thread
+# threading.Thread
 class Spider():
     '''
         拉勾职位数据爬虫
@@ -40,6 +40,7 @@ class Spider():
         total_pages: 该关键词记录总页数,默认认每页15条
         page_queue: 需要爬取页数的队列
         threads: 创建的线程数
+        dump_thread: 数据写入文件线程
         uid: 登录名
         passwd: 密码
     '''
@@ -61,8 +62,9 @@ class Spider():
     cookies = ""
     record_lock = threading.Lock()
     total_pages = 1
-    page_queue= Queue.Queue()
+    page_queue = Queue.Queue()
     threads = []
+    dump_thread = None
     uid = "lagouspider@163.com"
     passwd = "spiderlagou"
     def __init__(self, keyword=None, num=None, filename=None ):
@@ -76,7 +78,7 @@ class Spider():
         #threading.Thread.__init__(self)
         self.key_word = keyword or "None"
         self.thread_num = num or 1
-        self.filename = filename or "lagouSpider"
+        self.filename = (filename or "lagouSpider") + '_' + str(time.time())
         self.init_logging()
 
     def init_logging(self):
@@ -98,12 +100,12 @@ class Spider():
         except Exception as e:
             logging.error(e.message)
 
-    def logout(self):
-        print "尝试登出"
-        #res = self.ses.get("http://www.lagou.com/frontLogout.do")
-        #print res.content
-        res = self.ses.close()
-        print res
+    # def logout(self):
+    #     print "尝试登出"
+    #     #res = self.ses.get("http://www.lagou.com/frontLogout.do")
+    #     #print res.content
+    #     res = self.ses.close()
+    #     print res
 
     def set_user_agent(self, agent_str):
         self.headers["User-Agent"] = agent_str
@@ -119,7 +121,7 @@ class Spider():
         '''
         json_res = "None"
         try:
-            post_data = {"first": True, "pn":1, "kd": self.key_word}
+            post_data = {"first": True, "pn": 1, "kd": self.key_word}
             res = self.ses.post(self.position_url, data=post_data, headers=self.headers)
             if res.status_code == 200:
                 json_res = json.loads(res.content)
@@ -166,11 +168,16 @@ class Spider():
    
    
     def crawl(self):
+        '''
+        @summary: 启动 num 个threads 抓取数据 一个dump线程循环导出数据
+        :return:
+        '''
         logging.info("start to crwal {keyword} ".format(keyword=self.key_word))
+        start = time.ctime()
         self.total_pages =  self.cal_pages()
         # init queue
         for page in range(self.total_pages):
-            self.page_queue.put( page + 1 )
+            self.page_queue.put(page + 1)
 
         for i in range(self.thread_num):
             self.threads.append(threading.Thread(target=self.crawl_page))
@@ -178,24 +185,62 @@ class Spider():
         for i in range(self.thread_num):
             self.threads[i].start()
 
+        self.dump_thread = threading.Thread(target=self.dump_data)
+        self.dump_thread.start()
         for i in range(self.thread_num):
             self.threads[i].join()
+        self.dump_thread.join()
 
-        logging.info("crawl finished")
+        end = time.ctime()
+        logging.info("spider start at {start} and finished at {end}".format(start=start, end=end))
+
+    def all_threads_alive(self):
+        status = [thread.is_alive() for thread in self.threads]
+        return reduce(lambda x,y: x and y, status)
+
+    def is_thread_alive(self):
+        status = [thread.is_alive() for thread in self.threads]
+        return reduce(lambda x, y: x or y, status)
+
+    def all_threads_dead(self):
+        status = [thread.is_alive() == False for thread in self.threads]
+        return reduce(lambda x,y: x and y, status)
 
     def dump_data(self):
+        '''
+        @summary: 将内存中数据写出
+        :return:
+        '''
         file = self.filename + '.data'
-        logging.info("dumpping data into {file}".format(file=file))
-        with open(file, "a+") as f:
-            for record in self.records:
-                f.write(json.dumps(record) + '\n')
-        logging.info("dump data finished")
+        sleep_time = self.total_pages // self.thread_num + 1
+        logging.info("dumpping  into {file}, dumpping thread sleep time is {slp}".format(file=file, slp=sleep_time))
+        with open(file, "w+") as f:
+            # 在还有抓取线程存活的情况下,缓存记录条数大于100条时dump,并睡眠相应的秒数
+            while not self.all_threads_dead():
+                if len(self.records) >= 100:
+                    self.write_data_to_file(f)
+                time.sleep(sleep_time)
+            # 当所有抓取线程退出后, dump所有内存中数据
+            self.write_data_to_file(f)
+
+        logging.info("dumpping data finished")
+
+    def write_data_to_file(self, f):
+        '''
+        @summary: 获取records锁,将所有记录写入文件,释放锁
+        :param f: 写入文件句柄
+        :return:
+        '''
+        self.record_lock.acquire()
+        for record in self.records:
+            f.write(json.dumps(record) + '\n')
+        self.records = []
+        self.record_lock.release()
 
 if __name__ == "__main__":
     random.seed(time.time())
     index = random.randint(0,len(USER_AGENT)-1)
     
-    spider = Spider("docker",3)
+    spider = Spider("java",3)
     spider.login()
     spider.crawl()
-    spider.dump_data()
