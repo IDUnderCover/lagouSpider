@@ -28,7 +28,7 @@ from useragent import *
  kd: "python"
 '''
 # threading.Thread
-class Spider():
+class LagouSpider():
     '''
         拉勾职位数据爬虫
         login_url: 拉勾登录链接
@@ -120,6 +120,8 @@ class Spider():
         :return:  该关键词对应的页数
         '''
         json_res = "None"
+        total_count = 1
+        page_size = 1
         try:
             post_data = {"first": True, "pn": 1, "kd": self.key_word}
             res = self.ses.post(self.position_url, data=post_data, headers=self.headers)
@@ -129,8 +131,8 @@ class Spider():
                 page_size = json_res["content"]["pageSize"] # number of records of each page
                 logging.info("总记录条数为 {counts}, 每页 {size} 条数据".format(counts=total_count, size=page_size))
             else:
-                logging.warning("计算记录条数失败, 返回状态码 {code}, 返回内容: {content}".format(code=res.status_code,
-                                                                                 content=res.content))
+                logging.warning("计算记录条数失败, 返回状态码 {code}, 返回内容: {content}"
+                                .format(code=res.status_code, content=res.content))
         except Exception as e:
             logging.error(e.message)
             logging.debug(json_res)
@@ -174,6 +176,7 @@ class Spider():
         '''
         logging.info("start to crwal {keyword} ".format(keyword=self.key_word))
         start = time.ctime()
+        self.login()
         self.total_pages =  self.cal_pages()
         # init queue
         for page in range(self.total_pages):
@@ -213,17 +216,18 @@ class Spider():
         '''
         file = self.filename + '.data'
         sleep_time = self.total_pages // self.thread_num + 1
-        logging.info("dumpping  into {file}, dumpping thread sleep time is {slp}".format(file=file, slp=sleep_time))
+        logging.info("dumping thread is started, target file is {file} "
+                     "sleep time is {slp}".format(file=file, slp=sleep_time))
         with open(file, "w+") as f:
             # 在还有抓取线程存活的情况下,缓存记录条数大于100条时dump,并睡眠相应的秒数
             while not self.all_threads_dead():
-                if len(self.records) >= 100:
+                if len(self.records) >= 1000:
                     self.write_data_to_file(f)
                 time.sleep(sleep_time)
             # 当所有抓取线程退出后, dump所有内存中数据
             self.write_data_to_file(f)
 
-        logging.info("dumpping data finished")
+        logging.info("dumping data finished")
 
     def write_data_to_file(self, f):
         '''
@@ -231,16 +235,18 @@ class Spider():
         :param f: 写入文件句柄
         :return:
         '''
+        logging.info("writing data into file")
         self.record_lock.acquire()
         for record in self.records:
             f.write(json.dumps(record) + '\n')
         self.records = []
         self.record_lock.release()
+        logging.info("writing finished")
 
 if __name__ == "__main__":
     random.seed(time.time())
-    index = random.randint(0,len(USER_AGENT)-1)
+    index = random.randint(0, len(USER_AGENT)-1)
     
-    spider = Spider("java",3)
-    spider.login()
+    spider = LagouSpider("java", 3)
+
     spider.crawl()
