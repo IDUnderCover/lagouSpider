@@ -1,16 +1,18 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import requests
-import random
-import time
-import json
-import threading
 import Queue
+import json
 import logging
-from useragent import *
+import random
+import requests
+import threading
+import time
+
 from functools import reduce
-from db import position
+from ..db import position
+from ..myheaders.useragent import USER_AGENT
+
 '''
  获取职位 url
  "http://www.lagou.com/jobs/positionAjax.json?px=default&needAddtionalResult=false"
@@ -31,7 +33,7 @@ from db import position
 # threading.Thread
 
 
-class LagouSpider():
+class LagouSpider(object):
     '''
         拉勾职位数据爬虫
         login_url: 拉勾登录链接
@@ -49,40 +51,62 @@ class LagouSpider():
     '''
     login_url = "https://passport.lagou.com/login/login.json"
     position_url = "http://www.lagou.com/jobs/positionAjax.json?px=default&needAddtionalResult=false"
-    headers = {
-        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-        "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
-        "Referer": "http://www.lagou.com/job",
-        "X-Requested-With": "XMLHttpRequest",
-        "Accept": "application/json,text/javascript,*/*;q=0.01",
-        "Accept-Language": "en-US,en;q=0.5",
-        "Accept-Encoding": "gzip,deflate",
-        "Connection": "keep-alive"}
-
-    records = []
-    ses = None
-    cookies = ""
-    record_lock = threading.Lock()
     total_pages = 1
-    page_queue = Queue.Queue()
-    threads = []
-    dump_thread = None
     uid = "lagouspider@163.com"
     passwd = "spiderlagou"
 
-    def __init__(self, keyword=None, num=None, filename=None):
+
+    def __init__(self, keyword=None, num=None, db='postgresql', filename=None):
         '''
         @summary: 开启num个线程爬取 http://www.lagou.com 的 keyword 职位数据
 
         :param keyword: 关键词
         :param num: 线程数
         :param filename: 输出日志和数据文件名
+        :param db: 数据写入地址, 'postgresql' 写入到数据库
+                               'file' 写入到文件
         '''
         # threading.Thread.__init__(self)
         self.key_word = keyword or "None"
         self.thread_num = num or 1
+        self.db = db
         self.filename = (filename or "lagouSpider") + '_' + str(time.time())
         self.init_logging()
+        self.threads = []
+        self.dump_thread = None
+        self.records = []
+        self.headers = LagouSpider.init_headers()
+        self.page_queue = Queue.Queue()
+        self.record_lock = threading.Lock()
+
+    def dump_methods(self):
+        dumps = {
+            'postgresql':self.write_data_to_postgresql,
+            'file': self.write_data_to_file
+        }
+        return dumps
+
+    @staticmethod
+    def init_headers():
+        return {
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0",
+            "Referer": "http://www.lagou.com/job",
+            "X-Requested-With": "XMLHttpRequest",
+            "Accept": "application/json,text/javascript,*/*;q=0.01",
+            "Accept-Language": "en-US,en;q=0.5",
+            "Accept-Encoding": "gzip,deflate",
+            "Connection": "keep-alive"
+        }
+
+    def set_headers(self, **kwargs):
+        self.headers = dict(self.headers + kwargs)
+
+    def get_headers(self, key=None, *args):
+        if key is None:
+            return (self.headers[key] for key in args)
+        else:
+            return self.headers[key]
 
     def init_logging(self):
         logging.basicConfig(
@@ -115,11 +139,11 @@ class LagouSpider():
     #     res = self.ses.close()
     #     print res
 
-    def set_user_agent(self, agent_str):
-        self.headers["User-Agent"] = agent_str
-
-    def set_content_type(self, type_str):
-        self.headers["Content-Type"] = type_str
+    # def set_user_agent(self, agent_str):
+    #     self.headers["User-Agent"] = agent_str
+    #
+    # def set_content_type(self, type_str):
+    #     self.headers["Content-Type"] = type_str
 
     def cal_pages(self):
         '''
@@ -244,7 +268,7 @@ class LagouSpider():
         sleep_time = self.total_pages // self.thread_num + 1
         logging.info("dumping thread is started, target file is {file} "
                      "sleep time is {slp}".format(file=file, slp=sleep_time))
-        self.dump_with_method(self.write_data_to_postgresql)
+        self.dump_with_method(self.dump_methods()[self.db])
 
         logging.info("dumping data finished")
 
@@ -283,10 +307,10 @@ class LagouSpider():
         logging.info("writing finished")
 
     def write_data_to_file(self):
-        '''
+        """
         @summary: 获取records锁,将所有记录写入文件,释放锁
         :return:
-        '''
+        """
         logging.info("writing data into file")
         with open(self.filename + '.data', "w+") as f:
             self.record_lock.acquire()

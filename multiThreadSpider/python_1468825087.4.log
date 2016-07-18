@@ -1,0 +1,169 @@
+Mon, 18 Jul 2016 14:58:07 spider.py[line:225] INFO start to crwal python 
+Mon, 18 Jul 2016 14:58:07 spider.py[line:124] INFO 尝试以用户 lagouspider@163.com 密码 spiderlagou 登录
+Mon, 18 Jul 2016 14:58:07 connectionpool.py[line:788] INFO Starting new HTTPS connection (1): passport.lagou.com
+Mon, 18 Jul 2016 14:58:07 connectionpool.py[line:395] DEBUG "POST /login/login.json HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:07 spider.py[line:129] INFO login successfully
+Mon, 18 Jul 2016 14:58:07 connectionpool.py[line:213] INFO Starting new HTTP connection (1): www.lagou.com
+Mon, 18 Jul 2016 14:58:07 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:07 spider.py[line:171] INFO 总记录条数为 1154, 每页 15 条数据
+Mon, 18 Jul 2016 14:58:07 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 1 and sleep 2
+Mon, 18 Jul 2016 14:58:07 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 2 and sleep 2
+Mon, 18 Jul 2016 14:58:07 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 3 and sleep 2
+Mon, 18 Jul 2016 14:58:07 spider.py[line:270] INFO dumping thread is started, target file is python_1468825087.4.data sleep time is 26
+Mon, 18 Jul 2016 14:58:09 connectionpool.py[line:213] INFO Starting new HTTP connection (2): www.lagou.com
+Mon, 18 Jul 2016 14:58:09 connectionpool.py[line:213] INFO Starting new HTTP connection (3): www.lagou.com
+Mon, 18 Jul 2016 14:58:09 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:09 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:09 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:09 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 4 and sleep 3
+Mon, 18 Jul 2016 14:58:09 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 5 and sleep 3
+Mon, 18 Jul 2016 14:58:09 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 6 and sleep 3
+Mon, 18 Jul 2016 14:58:13 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:13 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:13 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:13 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 7 and sleep 3
+Mon, 18 Jul 2016 14:58:13 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 8 and sleep 3
+Mon, 18 Jul 2016 14:58:13 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 9 and sleep 2
+Mon, 18 Jul 2016 14:58:15 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:15 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 10 and sleep 2
+Mon, 18 Jul 2016 14:58:16 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:16 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 11 and sleep 2
+Mon, 18 Jul 2016 14:58:16 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:17 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 12 and sleep 3
+Mon, 18 Jul 2016 14:58:17 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:17 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 13 and sleep 2
+Mon, 18 Jul 2016 14:58:18 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:18 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 14 and sleep 3
+Mon, 18 Jul 2016 14:58:19 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:19 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 15 and sleep 3
+Mon, 18 Jul 2016 14:58:20 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:20 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 16 and sleep 2
+Mon, 18 Jul 2016 14:58:22 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:22 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 17 and sleep 3
+Mon, 18 Jul 2016 14:58:22 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:22 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:22 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 18 and sleep 2
+Mon, 18 Jul 2016 14:58:22 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 19 and sleep 3
+Mon, 18 Jul 2016 14:58:24 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:24 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 20 and sleep 2
+Mon, 18 Jul 2016 14:58:25 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:25 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 21 and sleep 3
+Mon, 18 Jul 2016 14:58:25 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:25 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 22 and sleep 3
+Mon, 18 Jul 2016 14:58:26 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:26 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 23 and sleep 3
+Mon, 18 Jul 2016 14:58:28 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:28 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 24 and sleep 3
+Mon, 18 Jul 2016 14:58:28 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:28 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 25 and sleep 3
+Mon, 18 Jul 2016 14:58:30 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:30 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 26 and sleep 2
+Mon, 18 Jul 2016 14:58:31 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:31 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:32 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 27 and sleep 2
+Mon, 18 Jul 2016 14:58:32 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 28 and sleep 3
+Mon, 18 Jul 2016 14:58:32 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:32 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 29 and sleep 3
+Mon, 18 Jul 2016 14:58:34 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:34 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 30 and sleep 2
+Mon, 18 Jul 2016 14:58:35 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:35 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 31 and sleep 2
+Mon, 18 Jul 2016 14:58:35 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:35 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 32 and sleep 3
+Mon, 18 Jul 2016 14:58:36 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:36 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 33 and sleep 2
+Mon, 18 Jul 2016 14:58:37 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:37 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 34 and sleep 3
+Mon, 18 Jul 2016 14:58:38 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:38 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 35 and sleep 3
+Mon, 18 Jul 2016 14:58:38 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:38 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 36 and sleep 3
+Mon, 18 Jul 2016 14:58:40 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:40 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 37 and sleep 2
+Mon, 18 Jul 2016 14:58:41 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:41 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 38 and sleep 2
+Mon, 18 Jul 2016 14:58:41 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:41 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 39 and sleep 2
+Mon, 18 Jul 2016 14:58:42 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:42 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 40 and sleep 3
+Mon, 18 Jul 2016 14:58:43 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:43 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 41 and sleep 2
+Mon, 18 Jul 2016 14:58:43 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:43 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 42 and sleep 3
+Mon, 18 Jul 2016 14:58:45 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:45 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 43 and sleep 2
+Mon, 18 Jul 2016 14:58:45 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:45 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 44 and sleep 3
+Mon, 18 Jul 2016 14:58:46 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:46 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 45 and sleep 3
+Mon, 18 Jul 2016 14:58:47 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:47 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 46 and sleep 2
+Mon, 18 Jul 2016 14:58:49 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:49 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 47 and sleep 2
+Mon, 18 Jul 2016 14:58:50 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:50 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 48 and sleep 3
+Mon, 18 Jul 2016 14:58:50 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:50 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 49 and sleep 2
+Mon, 18 Jul 2016 14:58:51 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:51 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 50 and sleep 3
+Mon, 18 Jul 2016 14:58:52 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:52 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 51 and sleep 3
+Mon, 18 Jul 2016 14:58:53 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:53 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 52 and sleep 2
+Mon, 18 Jul 2016 14:58:54 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:54 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 53 and sleep 3
+Mon, 18 Jul 2016 14:58:55 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:55 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 54 and sleep 2
+Mon, 18 Jul 2016 14:58:55 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:55 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 55 and sleep 3
+Mon, 18 Jul 2016 14:58:57 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:57 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 56 and sleep 2
+Mon, 18 Jul 2016 14:58:57 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:57 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 57 and sleep 3
+Mon, 18 Jul 2016 14:58:58 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:58 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 58 and sleep 2
+Mon, 18 Jul 2016 14:58:59 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:58:59 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 59 and sleep 3
+Mon, 18 Jul 2016 14:59:00 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:00 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 60 and sleep 3
+Mon, 18 Jul 2016 14:59:00 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:00 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 61 and sleep 3
+Mon, 18 Jul 2016 14:59:02 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:02 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 62 and sleep 3
+Mon, 18 Jul 2016 14:59:03 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:03 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 63 and sleep 2
+Mon, 18 Jul 2016 14:59:03 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:04 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 64 and sleep 2
+Mon, 18 Jul 2016 14:59:05 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:05 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 65 and sleep 2
+Mon, 18 Jul 2016 14:59:05 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:06 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 66 and sleep 2
+Mon, 18 Jul 2016 14:59:06 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:06 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 67 and sleep 3
+Mon, 18 Jul 2016 14:59:08 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:08 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 68 and sleep 2
+Mon, 18 Jul 2016 14:59:08 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:08 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 69 and sleep 3
+Mon, 18 Jul 2016 14:59:09 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:09 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 70 and sleep 3
+Mon, 18 Jul 2016 14:59:10 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:10 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 71 and sleep 3
+Mon, 18 Jul 2016 14:59:11 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:11 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 72 and sleep 3
+Mon, 18 Jul 2016 14:59:12 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:12 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 73 and sleep 2
+Mon, 18 Jul 2016 14:59:13 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:13 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 74 and sleep 2
+Mon, 18 Jul 2016 14:59:14 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:14 spider.py[line:190] INFO <Thread(Thread-3, started 140309266691840)> start to crawl page No. 75 and sleep 3
+Mon, 18 Jul 2016 14:59:14 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:14 spider.py[line:190] INFO <Thread(Thread-2, started 140309348763392)> start to crawl page No. 76 and sleep 3
+Mon, 18 Jul 2016 14:59:15 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:15 spider.py[line:190] INFO <Thread(Thread-1, started 140309357156096)> start to crawl page No. 77 and sleep 3
+Mon, 18 Jul 2016 14:59:17 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:17 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:18 connectionpool.py[line:395] DEBUG "POST /jobs/positionAjax.json?px=default&needAddtionalResult=false HTTP/1.1" 200 None
+Mon, 18 Jul 2016 14:59:25 spider.py[line:287] INFO writing data into postgresql
+Mon, 18 Jul 2016 14:59:26 spider.py[line:307] INFO writing finished
+Mon, 18 Jul 2016 14:59:26 spider.py[line:273] INFO dumping data finished
+Mon, 18 Jul 2016 14:59:26 spider.py[line:248] INFO spider start at Mon Jul 18 14:58:07 2016 and finished at Mon Jul 18 14:59:26 2016
