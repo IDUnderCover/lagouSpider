@@ -10,7 +10,8 @@ import threading
 import time
 
 from functools import reduce
-from ..db import position
+from ..db import db_session
+from ..db.mymodels import Position, ProxyEntity
 from ..myheaders.useragent import USER_AGENT
 
 '''
@@ -100,7 +101,7 @@ class LagouSpider(object):
         }
 
     def set_headers(self, **kwargs):
-        self.headers = dict(self.headers + kwargs)
+        self.headers = dict(self.headers, **kwargs)
 
     def get_headers(self, key=None, *args):
         if key is None:
@@ -286,11 +287,11 @@ class LagouSpider(object):
     def write_data_to_postgresql(self):
         logging.info("writing data into postgresql")
         self.record_lock.acquire()
-        ses = position.Session()
+        ses = db_session()
         try:
             for record in self.records:
                 ses.add(
-                    position.Position(
+                    Position(
                         keyword=self.key_word,
                         time=time.time(),
                         doc=record

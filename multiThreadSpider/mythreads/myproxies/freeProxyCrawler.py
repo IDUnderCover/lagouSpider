@@ -7,6 +7,8 @@ import requests
 from lxml import etree
 
 from ..myheaders.useragent import USER_AGENT
+from ..db import db_session
+from ..db.mymodels import ProxyEntity
 
 _TARGET_URL = "http://www.xicidaili.com/"
 _PROXY_FILE = 'proxies.data'
@@ -19,7 +21,8 @@ def proxy_crwaler_handler(url, user_agent, f):
     content = do_request(url, user_agent)
     if content:
         proxies = html_parser(content)
-        save_to_file(f, proxies)
+        # save_to_file(f, proxies)
+        save_to_postgresql(proxies)
 
 
 
@@ -62,6 +65,17 @@ def save_to_file(f, proxies):
         for proxy in proxies:
             f.write(json.dumps(proxy) + '\n')
 
+
+def save_to_postgresql(proxies):
+    try:
+        ses = db_session()
+        for proxy in proxies:
+            ses.add(
+                ProxyEntity(**proxy)
+            )
+        ses.commit()
+    except Exception, e:
+        print str(e)
 
 def crawler():
     thread = Thread(target=proxy_crwaler_handler, args=(_TARGET_URL, USER_AGENT, _PROXY_FILE))
