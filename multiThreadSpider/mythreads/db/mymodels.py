@@ -3,7 +3,7 @@
 
 from . import _Base
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy.dialects.postgresql import JSONB
 
 class Position(_Base):
@@ -32,12 +32,14 @@ class ProxyEntity(_Base):
     anonymous = Column(String)
     verify = Column(String)
     type = Column(String)
+    latency = Column(Float, default=0.0)
 
     def __repr__(self):
         return "<ProxyEntity (id='%d', ip='%s', port='%s', country='%s', address='%s', live='%s', anonymous='%s'" \
-               "verify='%s', type='%s')" % (self.id, self.ip, self.port, self.country, self.address, self.live,
-                                            self.anonymous, self.verify, self.type)
+               "verify='%s', type='%s', latency='%f')" % (self.id, self.ip, self.port, self.country, self.address, self.live,
+                                            self.anonymous, self.verify, self.type, self.latency)
 
+    __str__ = __repr__
 
 
 # def create_table():

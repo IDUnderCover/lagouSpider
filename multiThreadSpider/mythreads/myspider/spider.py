@@ -321,6 +321,7 @@ class LagouSpider(object):
             self.record_lock.release()
         logging.info("writing finished")
 
+
 if __name__ == "__main__":
     random.seed(time.time())
     index = random.randint(0, len(USER_AGENT) - 1)

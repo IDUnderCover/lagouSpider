@@ -9,5 +9,6 @@ _engine = create_engine(_postgre_url, encoding='utf-8')
 
 from . import mymodels
 _Base.metadata.create_all(_engine)
+
 db_session = sessionmaker(_engine)
 
